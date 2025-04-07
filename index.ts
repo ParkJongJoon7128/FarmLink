@@ -1,6 +1,5 @@
 import { registerRootComponent } from "expo";
 
-import { initializeKakaoSDK } from "@react-native-kakao/core";
 import App from "./App";
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);
@@ -8,5 +7,3 @@ import App from "./App";
 // the environment is set up appropriately
 
 registerRootComponent(App);
-
-initializeKakaoSDK("c55cbbae2ff680cb54be87022180a1c8");
