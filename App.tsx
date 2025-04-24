@@ -1,7 +1,10 @@
 import { initializeKakaoSDK } from "@react-native-kakao/core";
-import { login } from "@react-native-kakao/user";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import { useEffect } from "react";
-import { Pressable, Text, View } from "react-native";
+import LoginScreen from "./src/screens/LoginScreen";
+
+const Stack = createStackNavigator<ROOT_NAVIGATION>();
 
 export default function App() {
   // Logic
@@ -11,30 +14,13 @@ export default function App() {
 
   // View
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#ffffff",
-      }}
-    >
-      <Pressable
-        style={{
-          width: "50%",
-          height: "5%",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "black",
-        }}
-        onPress={() => {
-          login()
-            .then((res) => console.log(JSON.stringify(res, null, 5)))
-            .catch((err) => console.log(err));
-        }}
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Login"
+        screenOptions={{ headerShown: false }}
       >
-        <Text style={{ color: "#ffffff" }}>Login</Text>
-      </Pressable>
-    </View>
+        <Stack.Screen name="Login" component={LoginScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
