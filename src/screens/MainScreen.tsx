@@ -1,9 +1,7 @@
+import React from "react";
 import { Text, View } from "react-native";
 
-const LoginScreen = () => {
-  // Logic
-
-  // View
+const MainScreen = () => {
   return (
     <View
       style={{
@@ -13,9 +11,9 @@ const LoginScreen = () => {
         backgroundColor: "#ffffff",
       }}
     >
-      <Text>LoginScreen</Text>
+      <Text>MainScreen</Text>
     </View>
   );
 };
 
-export default LoginScreen;
+export default MainScreen;
